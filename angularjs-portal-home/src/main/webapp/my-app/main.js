@@ -11,6 +11,7 @@ define([
   './layout/static/routes',
   './layout/widget/routes',
   './search/routes',
+  './responderer/routes',
   'portal',
   'app-config',
   '../js/web-config',
@@ -32,7 +33,7 @@ define([
   './search/services',
 ], function(angular, require, marketplaceRoutes, listRoute, notificationsRoute,
     portalSettingsRoutes, featuresRoute, aboutRoute, layoutRoute, staticRoutes,
-    widgetRoutes, searchRoutes) {
+    widgetRoutes, searchRoutes, respondererRoutes) {
   return angular.module('my-app', [
     'ngRoute',
     'ngSanitize',
@@ -76,6 +77,7 @@ define([
           .when('/widget/:fname', widgetRoutes.widgetFullScreen)
           .when('/about', aboutRoute)
           .when('/widget-creator', widgetRoutes.widgetCreator)
+          .when('/responderer', respondererRoutes.main)
           .otherwise(layoutRoute);
     }]);
 });
